@@ -27,7 +27,7 @@ export default function TollUpload(props) {
     if (uploadStatus) {
       const timeoutId = setTimeout(() => {
         setUploadStatus(false);
-      }, 2000);
+      }, 5000);
 
       return () => clearTimeout(timeoutId); // This will clear the timeout if the component unmounts or if uploadStatus changes before the timeout completes
     }
@@ -170,7 +170,7 @@ export default function TollUpload(props) {
           {loader && <Loader />}
           
           <div className="col-12 mt-2 mb-2">
-          {display && <p style={{color:'red'}}>{display}</p>}
+          {display && <p className='alert alert-danger'>{display}</p>}
             <button type="submit" id="TollSubmit" className="btn btn-primary">Submit</button>
           </div>
           <div className="col-12 mt-2">
@@ -178,7 +178,7 @@ export default function TollUpload(props) {
           </div>
           {uploadStatus && (
             <div className="col-12 mt-2 mb-2">
-            {uploadStatus === 'Uploaded Successfully'? <button type="button" className="btn btn-success">{uploadStatus}</button> : <button type="button" className="btn btn-danger">{uploadStatus}</button>}
+            {uploadStatus === 'Uploaded Successfully'? <button type="button" className="alert alert-success">{uploadStatus}</button> : <button type="button" className="alert alert-success">{uploadStatus}</button>}
           </div>
           )}
         </form>

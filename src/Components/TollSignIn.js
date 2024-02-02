@@ -113,7 +113,7 @@ export default function TollLogin({ setSelectedToll, setSignInButton, setCookie 
           </div>
           <div className="row mt-3">
             <div className="">
-              <label className="c" style={{ backgroundColor: 'white' }}>
+              <label className="c rounded rounded-1" style={{ backgroundColor: 'white' }}>
                 <input style={{ color: 'black' }} type="password" className="form-control" id="pwd" required value={pwd} placeholder="Password" onChange={handlePwdChange} />
 
                 {eye &&

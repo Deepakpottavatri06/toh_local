@@ -32,7 +32,13 @@ export default function Statistics(props) {
 
   return (
     <div className='parenth mt-5'>
-    <div className='container shadow-lg border border-white border-3 p-4 rounded-4 bg-black'>
+    <div className='container shadow-lg border border-white border-3 p-3  rounded-4 bg-black'>
+      <div className="container text-light text-center">
+        <h2 className='fw-bold'>
+        Statistics
+        </h2>
+        <p >Analysis of tire conditions based on the vehicles passed through various toll plazas</p>
+      </div>
       <Chart className=''
         chartType="PieChart"
         data={data}

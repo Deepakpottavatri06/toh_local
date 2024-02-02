@@ -40,18 +40,19 @@ export default function Navbar({ signInButton, setCookie }) {
           {!signInButton && (<button className="nav-item btn rounded-5 btn-danger btn-outline-dark text-white" data-bs-target="#exampleModal" onClick={handleOpenModal}>Sign Out</button>
           )}
           {modal && (
-            <div>
+            <div >
               <div className="modal show" style={{ display: 'flex', width: '100%', height: '100%', justifyContent: 'center', alignItems: 'center' }} data-bs-dismiss='modal'>
                 <div className="modal-dialog" style={{ width: '100%', margin: 'auto' }}>
                   <div className="modal-content">
                     <div className="modal-header">
-                      <button type="button" className="btn-close" data-bs-dismiss='modal'></button>
+                      <button type="button" className="btn-close" data-bs-dismiss='modal' onClick={()=>setModal(false)}></button>
                     </div>
                     <div className="modal-body" style={{ color: 'white' }}>
                       Are you sure ?
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" className="nav-item btn rounded-5 btn-danger btn-outline-dark text-white" data-bs-dismiss='modal' onClick={handleLogOut}>Sign Out</button>
+                    <div class="modal-footer d-dlex justify-content-around">
+                      <button type="button" className="nav-item btn rounded-5 btn-danger btn-outline-dark text-white" data-bs-dismiss='modal' onClick={handleLogOut}>Yes, sign out</button>
+                      <button type="button" className="nav-item btn rounded-5 btn-success btn-outline-dark text-white w-25" data-bs-dismiss='modal' onClick={()=>setModal(false)}>No</button>
                     </div>
                   </div>
                 </div>

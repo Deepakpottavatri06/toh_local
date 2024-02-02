@@ -85,7 +85,8 @@ export default function CheckRecords(props) {
   return (
     <div className='parenth'>
       <div className='container text-center'>
-      <h1 style={{color:'white',backdropFilter:'blur(8px)'}} className='mt-5 bg-black border border-white border-3 rounded-5 p-4' >Toll Check Records : {props.selectedToll}</h1>
+      {/* <h1 style={{color:'white',backdropFilter:'blur(8px)'}} className='mt-5 bg-black border border-white border-3 rounded-5 p-4' >Toll Check Records : {props.selectedToll}</h1> */}
+        <h1 style={{color:'white',backdropFilter:'blur(8px)'}} className='mt-5 bg-black p-4' >Toll Check Records : {props.selectedToll}</h1>                   
         <form onSubmit={checkDate} style={{backdropFilter:'blur(10px)'}} className='container mb-4 bg-black border border-white border-3 rounded-5 p-2   justify-content-center' >
           <label htmlFor='date'className="mt-1 mb-2 container  align-items-center"style={{color:'white',}}>Enter date :</label>
           <input type='date' name='date' className='me-3 ms-3 rounded-3 border border-3 border-white' onChange={handleDateChange} max={dateS} required></input>
@@ -95,7 +96,7 @@ export default function CheckRecords(props) {
         {records && !loader &&
         <div id='p' className='mt-3 mb-3'>
 
-          {records==='0'? <button type='button' className='btn btn-danger'>No Records</button>:<button type='button' className='btn btn-success'>Total Records : {records}</button>}
+          {records==='0'? <button type='button' className='alert alert-danger'>No Records</button>:<button type='button' className='alert alert-success'>Total Records : {records}</button>}
         </div>
         }
         </form>

@@ -22,9 +22,12 @@ import './street_cred-webfont.woff';
 import './street_cred-webfont.woff2';
 
 const NotFound = (props) => (
-  <h1>404 Error.
+  <div className="parenth text-light text-center">
+    <h1>404 Error.
     The page you are looking for does not exist
-  </h1>)
+  </h1>
+  </div>
+  )
 
 function App() {
   const [selectedToll, setSelectedToll] = useState('');
@@ -77,7 +80,7 @@ function App() {
           <Route path='/guest' element={<Guest setSignInButton={setSignInButton} />} />
           <Route path='/guest/upload' element={<GuestUpload setSignInButton={setSignInButton} />} />
           <Route path='/guest/checkdetails' element={<GuestDetails setSignInButton={setSignInButton} />} />
-          <Route path='*' element={<NotFound setSignInButton={setSignInButton}  />} />
+          <Route path='*' element={<NotFound setSignInButton={setSignInButton}/>} />
         </Routes>
         <Footer setSignInButton={setSignInButton}/>
       </Router>

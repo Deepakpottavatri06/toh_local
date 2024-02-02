@@ -22,7 +22,7 @@ const Tollupload = multer({ storage: TollUp, limits: { fieldSize: 25 * 1024 * 10
 
 // & JWT
 const createToken = (id) => {
-    return jwt.sign({ id }, 'TiresOnHighway', { expiresIn: 60 * 60 * 1000 });}
+    return jwt.sign({ id }, 'TiresOnHighway', { expiresIn: 60 * 60 * 1000 });} // TiresOnHighway is secreT KEY
 
 // ! Login Route
 router.post('/login', Tollupload.any(), async (req, res) => {

@@ -9,7 +9,7 @@ const blobUtil = require('blob-util');
 const cookieparser = require('cookie-parser')
 router.use(cookieparser());
 const twilio = require('twilio');
-const sms = require('../middleware/sms');
+// const sms = require('../middleware/sms');
 // ^ CORS 
 router.use(cors({
     origin: 'http://localhost:3000',
@@ -83,13 +83,13 @@ router.post('/tollupload',auth,Tollupload.any(), async (req, res) => {
     }
     // sms(vehicleNumber,tollPlaza,date,msg);
     
-        const accountSid =  `${process.env.TWILIO_ACCOUNT}`;
-        const authToken = `${process.env.AUTH_TOKEN}`;
+    const accountSid = process.env.TWILIO_ACCOUNT_SID;
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
         const client = twilio(accountSid, authToken);
         try {
         const responseSMS = await client.messages
             .create({
-                from: '+13344543086',
+                from: '+13204138113',
                 to: '+91' + userMobileNumber,
                 body: `Your vehicle  ${vehicleNumber} has crossed ${tollPlaza} on ${date}\n${msg}`,
             })

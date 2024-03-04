@@ -20,6 +20,7 @@ import './all_css/Loader.css';
 import './stylesheet.css';
 import './street_cred-webfont.woff';
 import './street_cred-webfont.woff2';
+import './all_css/Navbar.css';
 
 const NotFound = (props) => (
   <div className="parenth text-light text-center">
